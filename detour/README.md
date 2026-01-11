@@ -84,3 +84,7 @@ In `scripts/detour.sh`:
 **Context not loading?**
 - The session context is written to `/tmp/detour-context-*.md`
 - Check the file was created and contains expected content
+
+## Acknowledgments
+
+The idea of using tmux to spawn side panes for Claude explorations was inspired by [David Siegel's claude-canvas](https://github.com/dvdsgl/claude-canvas) project.
