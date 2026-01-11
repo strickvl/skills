@@ -61,8 +61,9 @@ create_context_bundle() {
     local question="$1"
     local root="$2"
     local session_context_file="${3:-}"
-    local timestamp=$(date +%Y%m%d-%H%M%S)
-    local bundle_path="/tmp/claude-detour-context-${timestamp}-$$.md"
+    # Use mktemp for secure, unique temp file creation
+    local bundle_path
+    bundle_path="$(mktemp "/tmp/claude-detour-context.XXXXXX.md")"
 
     # Read session context if provided
     local session_context=""
@@ -113,8 +114,8 @@ send_bootstrap_message() {
     local context_content
     context_content=$(cat "$bundle_path")
 
-    # Type the prompt with embedded context
-    tmux send-keys -t "$pane_id" "Use detour-investigator agent. Context:
+    # Type the prompt with embedded context (agent is already set via --agent flag)
+    tmux send-keys -t "$pane_id" "Context:
 
 $context_content
 
@@ -143,7 +144,10 @@ spawn_detour() {
     fi
     echo "📦 Bundle: $bundle_path" >&2
 
-    local claude_cmd="cd '$root' && claude"
+    # Shell-escape the root path to handle paths with special characters
+    local quoted_root
+    quoted_root="$(printf '%q' "$root")"
+    local claude_cmd="cd -- $quoted_root && claude --agent detour-investigator"
     local pane_id
 
     if pane_id=$(get_existing_pane_id); then

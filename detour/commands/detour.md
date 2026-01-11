@@ -12,13 +12,13 @@ Before spawning the detour, analyze the question and provide context.
 
 1. **Assess relevance**: Is "$ARGUMENTS" related to what we've been working on in this session?
 
-2. **Write context file**: Create a unique file at `/tmp/detour-context-{unique_id}.md` where `{unique_id}` is the current epoch timestamp (e.g., `1736592000`). Write a brief (3-5 line) summary:
+2. **Write context file**: Create a unique file at `/tmp/detour-context-{unique_id}-$$.md` where `{unique_id}` is the current epoch timestamp (e.g., `1736592000`) and `$$` is the shell's process ID for uniqueness. Write a brief (3-5 line) summary:
    - If RELATED: Describe what we were doing, mention specific files/components involved
    - If UNRELATED: Note it's a separate exploration, but mention current session focus for background
 
 3. **Spawn the detour**: Run the script with the context file path you just created
    ```bash
-   bash .claude/scripts/detour.sh spawn "$ARGUMENTS" /tmp/detour-context-{unique_id}.md
+   bash "$HOME/.claude/scripts/detour.sh" spawn "$ARGUMENTS" "/tmp/detour-context-${unique_id}-$$.md"
    ```
 
 ## Context Template

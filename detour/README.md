@@ -47,9 +47,9 @@ Examples:
 1. **You run `/detour <question>`** in your main Claude session
 2. **Main Claude analyzes** whether the question relates to current work
 3. **Writes session context** to a temp file (what you were doing, relevant files)
-4. **Spawns a tmux side pane** with a fresh Claude instance
+4. **Spawns a tmux side pane** with a fresh Claude instance using `--agent detour-investigator`
 5. **Injects the prompt** with context bundle (session context + git info)
-6. **Detour Claude investigates** using the `detour-investigator` agent
+6. **Detour Claude investigates** in read-only exploration mode
 
 The detour agent is configured for exploration:
 - Read-only by default (Bash, Read, Grep, Glob tools)
@@ -82,8 +82,30 @@ In `scripts/detour.sh`:
 - Check script is executable: `chmod +x ~/.claude/scripts/detour.sh`
 
 **Context not loading?**
-- The session context is written to `/tmp/detour-context-*.md`
-- Check the file was created and contains expected content
+- Two temp files are created:
+  - **Session context file** (`/tmp/detour-context-*.md`): Written by the slash command with session summary
+  - **Context bundle** (`/tmp/claude-detour-context.*.md`): Created by the script, includes git info
+- Check both files were created and contain expected content
+
+## Privacy Note
+
+Detour writes temporary markdown files to `/tmp` containing:
+- Your question
+- The detected project root path
+- Optional session summary (what you were working on)
+- `git status` output (filenames of changed files)
+- Recent commits (`git log -n 5 --oneline`)
+- `git diff --stat` output (filenames and change sizes)
+
+These files remain on disk until manually deleted or system cleanup. If you're working in a sensitive or private repository, review or delete these files after use:
+
+```bash
+# View detour temp files
+ls -la /tmp/detour-context-*.md /tmp/claude-detour-context.*.md 2>/dev/null
+
+# Delete all detour temp files
+rm -f /tmp/detour-context-*.md /tmp/claude-detour-context.*.md
+```
 
 ## Acknowledgments
 
