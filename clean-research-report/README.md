@@ -4,7 +4,7 @@ Strip citation artifacts and hidden Unicode characters from ChatGPT deep researc
 
 ## What It Does
 
-When you export a ChatGPT deep research report as markdown, the file often contains leftover citation tokens, private-use Unicode delimiters, and entity annotation tags that clutter the text. This skill removes them cleanly.
+When you export a ChatGPT deep research report as markdown, the file often contains leftover citation tokens, private-use Unicode delimiters, and entity annotation tags that clutter the text. This skill auto-triggers when Claude detects you're working with such a file and cleans it up.
 
 ### What it removes
 
@@ -22,38 +22,27 @@ When you export a ChatGPT deep research report as markdown, the file often conta
 
 ```bash
 # From the skills repo root:
-mkdir -p ~/.claude/{commands,scripts}
-cp clean-research-report/commands/clean-research-report.md ~/.claude/commands/
-cp clean-research-report/scripts/clean_report.py ~/.claude/scripts/
+mkdir -p ~/.claude/skills/clean-research-report/scripts
+cp clean-research-report/SKILL.md ~/.claude/skills/clean-research-report/
+cp clean-research-report/scripts/clean_report.py ~/.claude/skills/clean-research-report/scripts/
 
 # Make script executable
-chmod +x ~/.claude/scripts/clean_report.py
+chmod +x ~/.claude/skills/clean-research-report/scripts/clean_report.py
 ```
 
 ## Usage
 
-```
-/clean-research-report path/to/report.md
-```
+The skill triggers automatically when Claude detects you're working with a ChatGPT deep research markdown export. You can also ask directly:
 
-### Modes
-
-```bash
-# Default: writes report_clean.md alongside the original
-/clean-research-report report.md
-
-# Explicit output path
-/clean-research-report report.md cleaned_output.md
-
-# Overwrite in place
-/clean-research-report report.md --inplace
-```
+- "Clean this research report"
+- "Remove the citation artifacts from this file"
+- "Fix this deep research export"
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `commands/clean-research-report.md` | Slash command — identifies the file and runs the script |
+| `SKILL.md` | Skill definition — auto-triggers on relevant user requests |
 | `scripts/clean_report.py` | Python script — regex-based cleaning of citation artifacts |
 
 ## How It Works

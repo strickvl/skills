@@ -24,15 +24,23 @@ cp -r detour/agents/* ~/.claude/agents/
 
 ## Structure
 
-Skills in this repo follow this structure:
+Skills use one of two Claude Code extension mechanisms:
 
+**Auto-triggered skills** (installed to `~/.claude/skills/`):
 ```
 skill-name/
-├── README.md           # Skill documentation
+├── README.md           # Human documentation
+├── SKILL.md            # Skill definition (name + description frontmatter)
+└── scripts/            # Executable code
+```
+
+**Slash commands** (installed to `~/.claude/commands/`, `scripts/`, `agents/`):
+```
+skill-name/
+├── README.md           # Human documentation
 ├── commands/           # Slash commands (*.md)
-├── scripts/            # Bash scripts
-├── agents/             # Sub-agent definitions
-└── skills/             # Skill definitions (if any)
+├── scripts/            # Bash/Python scripts
+└── agents/             # Sub-agent definitions
 ```
 
 ## Contributing
