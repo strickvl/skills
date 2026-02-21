@@ -9,6 +9,7 @@ A collection of reusable skills and sub-agents for [Claude Code](https://docs.an
 | Skill | Description | Requirements |
 |-------|-------------|--------------|
 | [detour](./detour/) | Spawn isolated exploration in a tmux side pane | tmux |
+| [clean-research-report](./clean-research-report/) | Strip citation artifacts from ChatGPT deep research markdown exports | Python 3.12+, uv |
 
 ## Installation
 
