@@ -23,7 +23,8 @@ from pathlib import Path
 
 def clean(text: str) -> str:
     # Remove cite tokens (with optional Unicode wrappers \ue200-\ue202)
-    text = re.sub(r'[ \t]*(file)?cite[\ue200\ue201\ue202a-z0-9]*(\ue202[^\ue201]*\ue201)?', '', text)
+    # Character class includes A-Z and hyphen to catch line-ref suffixes like L1-L1
+    text = re.sub(r'[ \t]*(file)?cite[\ue200\ue201\ue202a-zA-Z0-9\-]*(\ue202[^\ue201]*\ue201)?', '', text)
     # Remove any remaining private-use Unicode chars
     text = re.sub(r'[\ue200\ue201\ue202]+', '', text)
     # Remove entity[] annotation tags
