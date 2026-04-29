@@ -2,7 +2,7 @@
 name: research-prompt-crafter
 description: >-
   Craft high-quality prompts for deep research models (GPT-5.5, Gemini 3 Pro,
-  Claude 4.6 Opus, DeepSeek). Use when user wants to create a prompt for a research
+  Claude Opus 4.7, DeepSeek). Use when user wants to create a prompt for a research
   task that will run on a "thinking" model taking 5-20+ minutes. Triggers: "help me
   write a prompt", "craft a research prompt", "I need a prompt for deep research",
   "prompt for GPT-5.5", "prompt for Gemini", "write a prompt that will take a while
@@ -35,7 +35,7 @@ Ask the user which model the prompt will run on:
 
 - **GPT-5.5** → See [gpt-5-5-patterns.md](gpt-5-5-patterns.md)
 - **Gemini 3 Pro** → See [gemini-3-patterns.md](gemini-3-patterns.md)
-- **Claude 4.6 Opus** → See [claude-4-6-patterns.md](claude-4-6-patterns.md)
+- **Claude Opus 4.7** → See [claude-4-7-patterns.md](claude-4-7-patterns.md)
 - **Generic (multi-model)** → Use common patterns that work across models
 - **DeepSeek** → Use generic patterns (specific guide pending)
 

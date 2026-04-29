@@ -1,6 +1,6 @@
 {
   "name": "research-prompt-crafter",
-  "description": "Craft high-quality prompts for deep research models (GPT-5.5, Gemini 3 Pro, Claude 4.6 Opus, DeepSeek). Walks through a structured workflow to turn rough ideas into optimized research prompts for models that take 5-20+ minutes to respond.",
+  "description": "Craft high-quality prompts for deep research models (GPT-5.5, Gemini 3 Pro, Claude Opus 4.7, DeepSeek). Walks through a structured workflow to turn rough ideas into optimized research prompts for models that take 5-20+ minutes to respond.",
   "author": {
     "name": "Alex Strick van Linschoten"
   }

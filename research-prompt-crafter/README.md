@@ -7,7 +7,7 @@ Craft high-quality prompts for deep research models — the kind where you send 
 Walks you through a structured workflow to turn rough ideas into optimized research prompts for:
 
 - **GPT-5.5** — with outcome-first goals, success criteria, retrieval budgets, verification loops, and reasoning effort guidance
-- **Claude 4.6 Opus** — with adaptive thinking, explicit depth requests, and competing hypotheses patterns
+- **Claude Opus 4.7** — with adaptive thinking, new effort levels (`xhigh`/`max`), explicit scope, and competing hypotheses patterns
 - **Gemini 3 Pro** — with instruction placement, self-critique, and grounding rules
 - **DeepSeek** — using generic cross-model patterns
 
@@ -60,7 +60,7 @@ research-prompt-crafter/
 │   └── research-prompt-crafter/
 │       ├── SKILL.md                       # Skill definition & workflow
 │       ├── gpt-5-5-patterns.md            # GPT-5.5 (from OpenAI prompt guidance)
-│       ├── claude-4-6-patterns.md         # Claude 4.6 Opus (from Anthropic best practices)
+│       ├── claude-4-7-patterns.md         # Claude Opus 4.7 (from Anthropic best practices)
 │       └── gemini-3-patterns.md           # Gemini 3 Pro
 └── README.md
 ```
