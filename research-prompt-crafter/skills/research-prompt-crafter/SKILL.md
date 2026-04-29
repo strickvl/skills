@@ -1,11 +1,11 @@
 ---
 name: research-prompt-crafter
 description: >-
-  Craft high-quality prompts for deep research models (GPT-5.4, Gemini 3 Pro,
+  Craft high-quality prompts for deep research models (GPT-5.5, Gemini 3 Pro,
   Claude 4.6 Opus, DeepSeek). Use when user wants to create a prompt for a research
   task that will run on a "thinking" model taking 5-20+ minutes. Triggers: "help me
   write a prompt", "craft a research prompt", "I need a prompt for deep research",
-  "prompt for GPT-5.4", "prompt for Gemini", "write a prompt that will take a while
+  "prompt for GPT-5.5", "prompt for Gemini", "write a prompt that will take a while
   to run", or any request to create prompts for long-running AI research tasks.
 ---
 
@@ -33,7 +33,7 @@ Create prompts optimized for deep research models—the kind where you send a pr
 
 Ask the user which model the prompt will run on:
 
-- **GPT-5.4** → See [gpt-5-4-patterns.md](gpt-5-4-patterns.md)
+- **GPT-5.5** → See [gpt-5-5-patterns.md](gpt-5-5-patterns.md)
 - **Gemini 3 Pro** → See [gemini-3-patterns.md](gemini-3-patterns.md)
 - **Claude 4.6 Opus** → See [claude-4-6-patterns.md](claude-4-6-patterns.md)
 - **Generic (multi-model)** → Use common patterns that work across models
@@ -103,12 +103,12 @@ Apply model-specific patterns from the reference files:
 <output_format>...</output_format>
 ```
 
-**Include current date** at the top of the prompt (helps with time-sensitive research).
+**Include current date** at the top of the prompt for time-sensitive research, *except for GPT-5.5*, which is already aware of the current UTC date — adding it just adds noise (only inject a date there for non-UTC, business, or "as-of" anchoring).
 
 ### Step 6: Save Output
 
 **Filename format**: `{topic-slug}-{model}-prompt.md`  
-Examples: `ai-regulation-gpt54-prompt.md`, `market-analysis-gemini3-prompt.md`
+Examples: `ai-regulation-gpt55-prompt.md`, `market-analysis-gemini3-prompt.md`
 
 **Claude Code locations** (check in order):
 1. `design/` folder if it exists

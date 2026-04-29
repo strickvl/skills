@@ -6,7 +6,7 @@ Craft high-quality prompts for deep research models — the kind where you send 
 
 Walks you through a structured workflow to turn rough ideas into optimized research prompts for:
 
-- **GPT-5.4** — with output contracts, completeness contracts, 3-pass research mode, and reasoning effort guidance
+- **GPT-5.5** — with outcome-first goals, success criteria, retrieval budgets, verification loops, and reasoning effort guidance
 - **Claude 4.6 Opus** — with adaptive thinking, explicit depth requests, and competing hypotheses patterns
 - **Gemini 3 Pro** — with instruction placement, self-critique, and grounding rules
 - **DeepSeek** — using generic cross-model patterns
@@ -46,7 +46,7 @@ To add this as a skill in claude.ai:
 The skill triggers when you ask Claude to help craft a research prompt:
 
 - "Help me write a prompt for deep research"
-- "Craft a research prompt for GPT-5.4"
+- "Craft a research prompt for GPT-5.5"
 - "I need a prompt for Gemini"
 - "Write a prompt that will take a while to run"
 
@@ -59,7 +59,7 @@ research-prompt-crafter/
 ├── skills/
 │   └── research-prompt-crafter/
 │       ├── SKILL.md                       # Skill definition & workflow
-│       ├── gpt-5-4-patterns.md            # GPT-5.4 (from OpenAI prompt guidance)
+│       ├── gpt-5-5-patterns.md            # GPT-5.5 (from OpenAI prompt guidance)
 │       ├── claude-4-6-patterns.md         # Claude 4.6 Opus (from Anthropic best practices)
 │       └── gemini-3-patterns.md           # Gemini 3 Pro
 └── README.md
