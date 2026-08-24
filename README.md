@@ -11,6 +11,7 @@ A collection of reusable skills and sub-agents for [Claude Code](https://docs.an
 | [detour](./detour/) | Spawn isolated exploration in a tmux side pane | tmux |
 | [clean-research-report](./clean-research-report/) | Strip citation artifacts from ChatGPT deep research markdown exports | Python 3.12+, uv |
 | [research-prompt-crafter](./research-prompt-crafter/) | Craft optimized prompts for deep research models (GPT-5.4, Claude 4.6, Gemini 3) | — |
+| [going-to-the-library](./going-to-the-library/) | Map a field like a research librarian — browse curated shelves, then apply what you borrowed to your problem | Web search recommended |
 
 ## Installation
 

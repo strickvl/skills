@@ -1,0 +1,7 @@
+interface:
+  display_name: "Going to the Library"
+  short_description: "Map a field, browse its shelves, and bring useful ideas back to your problem."
+  default_prompt: "Let's go to the library on [subject], because I am trying to [problem]."
+
+policy:
+  allow_implicit_invocation: true
