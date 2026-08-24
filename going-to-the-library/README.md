@@ -2,6 +2,10 @@
 
 Map a specialized subject like a rigorous research librarian: browse its foundational works, modern syntheses, competing schools, practical authorities, critiques, and live debates — then carry the useful ideas back into your real problem.
 
+<img width="589" height="478" alt="CleanShot 2026-08-24 at 09 45 40" src="https://github.com/user-attachments/assets/3cc06caa-87a4-40d3-9a87-9ab9952d35f4" />
+
+(Credit to [Chris Kercher on X](https://x.com/ChrisKercher_/status/2091619783271686372) for the original idea)
+
 ## What It Does
 
 Say "let's go to the library on X" and Claude builds a curated, verified map of the field organized around its governing questions (not a dump of famous names). You then browse interactively — expand a shelf, pull a single work, compare two schools, assemble a reading stack — and finish with a "return to the workbench" memo that applies what you borrowed to the problem that sent you to the library in the first place.
